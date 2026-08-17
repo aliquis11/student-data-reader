@@ -16,8 +16,21 @@ def read_attendance(file):
     """
     attendance_df = pd.read_excel(file)
 
-    # Only keep columns with student ID and overall attendance in attendance_df and rename columns
-    attendance_df = attendance_df.iloc[:,[2,4]]
-    attendance_df.columns = ["Regno", "Attendance"]
+    # Keep student ID, overall attendance and individual lecture attendance columns
+    attendance_df = attendance_df.iloc[:, [2, 4] + list(range(5, attendance_df.shape[1]))]
+
+    # Change the names for the first two columns
+    attendance_df = attendance_df.rename(
+        columns={
+            attendance_df.columns[0]: "Regno",
+            attendance_df.columns[1]: "Attendance"
+        }
+    )
+    # Chnage lecture attendance from 'GPS' to 1 and 0 otherwise
+    attendance_df.iloc[:, 2:] = (
+        attendance_df.iloc[:, 2:]
+        .eq("GPS")
+        .astype(int)
+    )
 
     return attendance_df
