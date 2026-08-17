@@ -12,3 +12,6 @@ dependencies = [
     "numpy",
     "openpyxl",
 ]
+
+[tool.setuptools.packages.find]
+include = ["student_data_reader*"]
