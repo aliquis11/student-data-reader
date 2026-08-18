@@ -71,3 +71,13 @@ Makes the reader functions available directly from the `student_data_reader` pac
 
 ## Data
 No real student data is included in this repository. The files provided in the data folder were generated for illustrative purposes only. The outputs folder contains example outputs, including a compiled PDF report generated from the illustrative data.
+
+## Development workflow
+
+New functionality is developed on feature branches rather than directly on
+`master`. Changes are tested before being merged into `master` and included
+in a new release.
+
+Current development:
+
+- `attendance-additional-columns` — feature branch for modifying the attendance reader to include individual lecture records
