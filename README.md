@@ -80,4 +80,4 @@ in a new release.
 
 Current development:
 
-- `attendance-additional-columns` — feature branch for modifying the attendance reader include individual lecrre records
+- `attendance-additional-columns` — feature branch for modifying the attendance reader to include individual lecture records
